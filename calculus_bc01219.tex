@@ -1,28 +1,157 @@
-\documentclass[13pt]{article}
+\documentclass[12pt]{article}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{nccmath}
 \usepackage{cancel}
-\usepackage{color}
-\usepackage{xcolor}
-\usepackage{graphicx}
 \usepackage[margin=0.2in]{geometry}
 \usepackage[utf8]{inputenc}
 \thispagestyle{empty}
 \begin{document}
 \par\noindent
-\begin{fleqn}[4em]
+\begin{fleqn}[2em]
 
-% No.1
+% a
 \begin{align*}
 \boxed{
 \begin{aligned}
-  & \lim_{x \to \infty} \frac{\ln(x^{2020})}{x} \\
+  & \textbf{a. } \lim_{x \to \infty} \frac{\ln\left(x^{2020}\right)}{x} \\
+  & = \lim_{x \to \infty} \frac{2020 \ln\left(x\right)}{x} \\
+  & = 2020 \lim_{x \to \infty} \frac{\ln\left(x\right)}{x}
+    = \frac{\infty}{\infty} \text{ (bertemu indeterminate form)} \\
+  & \boxed{
+    \begin{aligned}
+      & \text{Menggunakan aturan L'Hopital} \\
+      & \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)} \\
+    \end{aligned}
+  } \\
+  & \text{sehingga didapat: } \\
+  & 2020 \lim_{x \to \infty} \frac{\ln\left(x\right)}{x}
+    = 2020 \lim_{x \to \infty} \frac{\frac{d}{dx} \ln\left(x\right)}{\frac{d}{dx} x} \\ ~
+  & = 2020 \lim_{x \to \infty} \frac{1/x}{1}
+    = 2020 \lim_{x \to \infty} \frac{1}{x} = 2020 \cdot 0 = 0
 \end{aligned}
 }
 \end{align*}
 
+% b
+\begin{align*}
+\boxed{
+\begin{aligned}
+  & \textbf{b. } \lim_{x \to \infty} \frac{x^{2020}}{e^x}
+    = \lim_{x\to \infty \:}\left(x^{2020}e^{-x}\right)
+    = \infty \cdot 0 \text{ (bertemu indeterminate form)} \\
+  & \boxed{
+    \begin{aligned}
+      & \text{Menggunakan aturan L'Hopital} \\
+      & \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)} \\
+    \end{aligned}
+  } \\
+  & \text{sehingga didapat: } \\
+  & \lim_{x \to \infty} \frac{x^{2020}}{e^x}
+    = \lim_{x \to \infty} \frac{\frac{d}{dx} x^{2020}}{\frac{d}{dx} e^x} \\
+  & = \lim _{x\to \infty}\frac{2020x^{2019}}{e^x} = \frac{\infty}{\infty}
+    \text{ (masih bertemu indeterminate form, maka diturunkan lagi)} \\
+  & = \lim _{x\to \infty}\frac{2020 \cdot 2019 x^{2018}}{e^x} = \frac{\infty}{\infty}
+    \text{ (masih bertemu indeterminate form, maka diturunkan lagi)} \\
+  & = \lim _{x\to \infty}\frac{2020 \cdot 2019 \cdot 2018 x^{2017}}{e^x} = \frac{\infty}{\infty}
+    \text{ (masih bertemu indeterminate form, maka diturunkan lagi)} \\
+  & ... \\
+  & \text{diturunkan sebanyak 2020 kali, sehingga tidak menghasilkan indeterminate form lagi} \\
+  & ... \\
+  & ... \text{ (proses disingkat, hasilnya membentuk pola yang bagus, mudah dibaca)} \\
+  & ... \\
+  & \text{menjadi factorial berikut} \\
+  & = \lim _{x\to \infty}\frac{2020 \cdot 2019 \cdot 2018 \cdot 2017 \cdot ... \cdot 1}{e^x}
+    = \lim _{x\to \infty}\frac{2020!}{e^x}
+    = \frac{2020!}{\infty} = 0
+\end{aligned}
+}
+\end{align*}
+
+% c
+\begin{align*}
+\boxed{
+\begin{aligned}
+  & \textbf{c. } \lim_{x \to \pi/2} \frac{3 \sec(x) + 5}{\tan(x)} \\
+  & \boxed{\text{Catatan: } \tan(x) = \frac{\sin(x)}{\cos(x)},\:~\:\sec(x) = \frac{1}{\cos(x)}} \\
+  & = \lim_{x \to \pi/2}\:\frac{3 \sec(x) + 5}{\sin(x)\:/\cos(x)} \\
+  & = \lim_{x \to \pi/2}\:\left(\frac{3 \sec(x)}{\sin(x)\:/\cos(x)} + \frac{5}{\sin(x)\:/\cos(x)}\right)\\
+  & = \lim_{x \to \pi/2}\:\left(\frac{3(1/\cos(x))}{\sin(x)\:/\cos(x)} + \frac{5}{\sin(x)\:/\cos(x)}\right)\\
+  & = \lim_{x \to \pi/2}\:\left(\frac{3\:\cancel{\cos(x)}}{\cancel{\cos(x)}\sin(x)} + \frac{5\cos(x)}{\sin(x)}\right) \\
+  & = \lim_{x \to \pi/2}\:\left(\frac{3}{\sin(x)} + \frac{5\cos(x)}{\sin(x)}\right) \\
+  & = \left(\frac{3}{\sin(\pi/2)} + \frac{5\cos(\pi/2)}{\sin(\pi/2)}\right) \\
+  & = \frac{3}{1} + \frac{5 \cdot 0}{1} = \frac{3}{1} + 0 = 3
+\end{aligned}
+}
+\end{align*}
+
+
+% d
+\begin{align*}
+\boxed{
+\begin{aligned}
+  & \textbf{d. } \lim_{x \to \infty} [x - \ln(x)] \\
+  & = \lim _{x\to \infty}x\left[1-\frac{\ln \left(x\right)}{x}\right] \text{ (dipecah menjadi 2 limit)} \\
+  & = \left(\lim _{x\to \infty}x\right) \cdot \left(\lim_{x\to \infty}\left[1 - \frac{\ln(x)}{x}\right]\right) \text{ (bertemu indeterminate form pada limit ke-2)}\\
+  & \boxed{
+    \begin{aligned}
+      & \text{Menggunakan aturan L'Hopital} \\
+      & \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)} \\
+    \end{aligned}
+  } \\
+  & = \left(\lim _{x\to \infty}x\right) \cdot \left(\lim_{x\to \infty}\left[1 - \frac{\frac{d}{dx}\ln(x)}{\frac{d}{dx}x}\right]\right) \\
+  & = \left(\lim _{x\to \infty}x\right) \cdot \left(\lim_{x\to \infty}\left[1 - \frac{1/x}{1}\right]\right) \\
+  & = \left(\lim _{x\to \infty}x\right) \cdot \left(\lim_{x\to \infty}\left[1 - \frac{1}{x}\right]\right) \\
+  & = \left(\lim _{x\to \infty}x\right) \cdot (1 - 0) \\
+  & = \infty \cdot 1 = \infty
+\end{aligned}
+}
+\end{align*}
+
+
+% e
+\begin{align*}
+\boxed{
+\begin{aligned}
+  & \textbf{e. } \lim_{x \to 0}\:\left[\csc^2(x) - \frac{1}{x^2}\right] \\
+  & \boxed{\text{Catatan: } \csc(x) = \frac{1}{\sin(x)},\:~\:\sin(2x) = 2\sin(x)\cos(x)} \\
+  & = \lim_{x \to 0}\:\left[\frac{1}{\sin^2(x)} - \frac{1}{x^2}\right] \\
+  & = \lim_{x \to 0}\:\left[\frac{x^2}{x^2\sin^2(x)} - \frac{\sin^2(x)}{x^2\sin^2(x)}\right] \text{ (disamakan penyebutnya)} \\
+  & = \lim_{x \to 0}\:\frac{x^2 - \sin^2(x)}{x^2\sin^2(x)}
+    = \frac{0^2 - \sin^2(0)}{0^2\sin^2(0)}
+    = \frac{0}{0} \text{ (bertemu indeterminate form) } \\
+  & \boxed{
+    \begin{aligned}
+      & \text{Menggunakan aturan L'Hopital} \\
+      & \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)} \\
+    \end{aligned}
+  } \\
+  & \text{sehingga } \lim_{x \to 0}\:\frac{x^2 - \sin^2(x)}{x^2\sin^2(x)}
+    = \lim_{x \to 0}\:\frac{\frac{d}{dx}\left(x^2 - \sin^2(x)\right)}{\frac{d}{dx}\left(x^2\sin^2(x)\right)} \\
+  & = \lim _{x\to \:0}\frac{2x-\sin \left(2x\right)}{2x\sin ^2\left(x\right)+\sin \left(2x\right)x^2}
+    = \frac{0}{0} \text{ (masih bertemu indeterminate form, diturunkan lagi)} \\
+  & = \lim _{x\to \:0}\frac{\frac{d}{dx}(2x-\sin \left(2x\right))}{\frac{d}{dx}(2x\sin ^2\left(x\right)+\sin \left(2x\right)x^2)} \\
+  & = \lim _{x\to \:0}\frac{2-\cos \left(2x\right)\cdot \:2}{2x^2\cos \left(2x\right)+4x\sin \left(2x\right)+2\sin ^2\left(x\right)} \\
+  & = \lim _{x\to \:0} \frac{1-\cos \left(2x\right)}{x^2\cos \left(2x\right)+2x\sin \left(2x\right)+\sin ^2\left(x\right)} = \frac{0}{0} \text{ (masih bertemu indeterminate form, diturunkan lagi)} \\
+  & = \lim _{x\to \:0} \frac{\frac{d}{dx}(1-\cos \left(2x\right))}{\frac{d}{dx}(x^2\cos \left(2x\right)+2x\sin \left(2x\right)+\sin ^2\left(x\right))} \\
+  & = \lim _{x\to \:0} \frac{2\sin \left(2x\right)}{2x\cos \left(2x\right)-2x^2\sin \left(2x\right)+2\sin \left(2x\right)+4x\cos \left(2x\right)+\sin \left(2x\right)} \\
+  & = \lim _{x\to \:0} \frac{2\sin \left(2x\right)}{6x\cos \left(2x\right)+3\sin \left(2x\right)-2x^2\sin \left(2x\right)} = \frac{0}{0} \text{ (masih bertemu indeterminate form, diturunkan lagi)} \\
+  & = \lim _{x\to \:0} \frac{\frac{d}{dx}(2\sin \left(2x\right))}{\frac{d}{dx}(6x\cos \left(2x\right)+3\sin \left(2x\right)-2x^2\sin \left(2x\right))} \\
+  & = \lim _{x\to \:0} \frac{4\cos \left(2x\right)}{6\cos \left(2x\right)-12x\sin \left(2x\right)+6\cos \left(2x\right)-2\left(2x\sin \left(2x\right)+\cos \left(2x\right)\cdot \:2x^2\right)} \\
+  & = \lim _{x\to \:0}\frac{4\cos \left(2x\right)}{12\cos \left(2x\right)-4x^2\cos \left(2x\right)-16x\sin \left(2x\right)} \\
+  & = \lim _{x\to \:0}\frac{\cancel{4}\cos \left(2x\right)}
+    {
+      \cancel{4}(3\cos \left(2x\right)-x^2\cos \left(2x\right)-4x\sin \left(2x\right))
+    } \\
+  & = \lim _{x\to \:0}\frac{\cos \left(2x\right)}
+    {3\cos \left(2x\right)-x^2\cos \left(2x\right)-4x\sin \left(2x\right)} \\
+  & = \frac{\cos \left(2(0)\right)}
+    {3\cos \left(2(0)\right)-0^2\cos \left(2(0)\right)-4(0)\sin \left(2(0)\right)} \\
+  & = \frac{\cos(0)}{3\cos(0) - 0 - 0} = \frac{1}{3}
+\end{aligned}
+}
+\end{align*}
 
 \end{fleqn}
 \end{document}
