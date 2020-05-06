@@ -9,7 +9,7 @@
 \thispagestyle{empty}
 \begin{document}
 \par\noindent
-\begin{fleqn}[2em]
+\begin{fleqn}[1em]
 
 % a
 \begin{align*}
@@ -58,15 +58,20 @@
     \text{ (masih bertemu indeterminate form, maka diturunkan lagi)} \\
   & = \lim _{x\to \infty}\frac{2020 \cdot 2019 \cdot 2018 \cdot 2017 \cdot x^{2016}}{e^x} = \frac{\infty}{\infty}
     \text{ (masih bertemu indeterminate form, maka diturunkan lagi)} \\
+  & = \lim _{x\to \infty}\frac{2020 \cdot 2019 \cdot 2018 \cdot 2017 \cdot 2016 \cdot x^{2015}}{e^x} = \frac{\infty}{\infty}
+    \text{ (masih bertemu indeterminate form, maka diturunkan lagi)} \\
   & ... \\
   & \text{diturunkan sebanyak 2020 kali, sehingga tidak menghasilkan indeterminate form lagi} \\
   & ... \\
   & ... \text{ (proses disingkat, hasilnya membentuk pola yang bagus, mudah dibaca)} \\
   & ... \\
-  & \text{menjadi factorial berikut} \\
-  & = \lim _{x\to \infty}\frac{2020 \cdot 2019 \cdot 2018 \cdot 2017 \cdot ... \cdot 1}{e^x}
-    = \lim _{x\to \infty}\frac{2020!}{e^x}
-    = \frac{2020!}{\infty} = 0
+  & \text{setelah diturunkan 2020 kali menjadi pola factorial berikut} \\
+  & = \lim _{x\to \infty}\frac{
+    2020 \cdot 2019 \cdot 2018 \cdot 2017 \cdot 2016 \cdot
+    2015 \cdot 2014 \cdot 2013 \cdot ... \cdot
+    8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1
+  }{e^x} \\
+  & = \lim _{x\to \infty}\frac{2020!}{e^x} = \frac{2020!}{\infty} = 0
 \end{aligned}
 }
 \end{align*}
@@ -149,6 +154,44 @@
 \end{aligned}
 }
 \end{align*}
+
+% f
+\begin{align*}
+\boxed{
+\begin{aligned}
+  & \textbf{f. } \lim_{x \to 0} (\cos(x))^{\csc(x)} \\
+  & \boxed{\text{Menggunakan aturan pangkat: } \:a^x=e^{\ln \left(a^x\right)}=e^{x\cdot \ln \left(a\right)}} \\
+  & \text{sehingga didapatkan } \cos(x) =  \\
+  & \lim_{x \to 0} (\cos(x))^{\csc(x)} = \lim_{x \to 0} \left(e^{\ln\left(\left(\cos(x)\right)^{\csc(x)}\right)}\right) \\
+  & = \lim_{x \to 0} \left(e^{\csc(x) \ln(\cos(x))}\right) \\
+  & \boxed{
+    \begin{aligned}
+      & \text{Menggunakan aturan rantai pada limit } \\
+      & \mathrm{Jika}\:\lim _{u\:\to \:b}\:f\left(u\right)=L,\:\mathrm{dan}\:\lim _{x\:\to \:a}g\left(x\right)=b,\:\mathrm{dan}\:f\left(x\right)\:\text{kontinu pada}\:x=b \text{, maka } \lim _{x\:\to \:a}\:f\left(g\left(x\right)\right)=L
+    \end{aligned}
+  } \\
+  & \text{Dimisalkan } g\left(x\right)=\csc \left(x\right)\ln \left(\cos \left(x\right)\right)\text{ dan }\:f\left(u\right)=e^u \\
+  & \lim_{x \to 0} \csc \left(x\right)\ln \left(\cos \left(x\right)\right) = \infty \cdot 0 \text{ (bertemu indeterminate form)} \\
+  & \boxed{
+    \begin{aligned}
+      & \text{Menggunakan aturan L'Hopital} \\
+      & \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)} \\
+    \end{aligned}
+  } \\
+  & \boxed{
+    \begin{aligned}
+    & \lim_{x \to 0} \csc \left(x\right)\ln \left(\cos \left(x\right)\right) = \lim_{x \to 0} \frac{\ln \left(\cos \left(x\right)\right)}{\frac{1}{\csc \left(x\right)}}
+      = \lim_{x \to 0} \frac{\frac{d}{dx} \ln \left(\cos \left(x\right)\right)}{\frac{d}{dx}\frac{1}{\csc \left(x\right)}} \\
+    & = \lim_{x \to 0} \frac{-\tan(x)}{\cos(x)} = \lim_{x \to 0} \frac{-\sin(x)}{\cos(x)\cos(x)}
+      = \frac{-\sin(0)}{\cos(0) \cos(0)} = \frac{0}{1 \cdot 1} = 0
+    \end{aligned}
+  } \\
+  & \lim _{u\to \:0}\left(e^u\right) = e^0 = 1 \\ ~ \\
+  & \boxed{\therefore \lim_{x \to 0} (\cos(x))^{\csc(x)} = 1}
+\end{aligned}
+}
+\end{align*}
+
 
 \end{fleqn}
 \end{document}
