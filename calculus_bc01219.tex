@@ -208,7 +208,7 @@
   & = \lim_{x \to \pi/2} \frac{\tan ^2\left(x\right)-\sec ^2\left(x\right)}{\tan(x) + \sec(x)} \\
   & \boxed{\text{Identitas Trigonometri: } \tan ^2\left(x\right)-\sec ^2\left(x\right)=-1} \\
   & = \lim_{x \to \pi/2} \frac{-1}{\tan(x) + \sec(x)} \\
-  & = \frac{-1}{-\infty} \\
+  & = \frac{-1}{-\infty} = \frac{1}{\infty}\\
   & = 0
   \\ & \textbf{by Ammar Faizi}
 \end{aligned}
@@ -219,7 +219,25 @@
 \begin{align*}
 \boxed{
 \begin{aligned}
-  & \textbf{h. } \lim_{x \to 0^{+}} \frac{\cot(x)}{\sqrt{-\ln(x)}}
+  & \textbf{h. } \lim_{x \to 0^{+}} \frac{\cot(x)}{\sqrt{-\ln(x)}} = \frac{\infty}{\infty} \text{ (bertemu indeterminate form)} \\
+  & \boxed{
+    \begin{aligned}
+      & \text{Menggunakan aturan L'Hopital} \\
+      & \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)} \\
+    \end{aligned}
+  } \\
+  & = \lim_{x \to 0^{+}} \frac{\frac{d}{dx}\cot(x)}{\frac{d}{dx}\sqrt{-\ln(x)}} \\
+  & = \lim_{x\to 0^+} \frac{-\csc^2(x)}{-\frac{1}{2x\sqrt{-\ln(x)}}} \\
+  & = \lim_{x\to 0^+}\left(2x\csc ^2\left(x\right)\sqrt{-\ln \left(x\right)}\right) \\
+  & = 2\cdot \lim _{x\to \:0^+}\left(x\csc ^2\left(x\right)\sqrt{-\ln \left(x\right)}\right) \\
+  & = 2\cdot \lim _{x\to \:0^+}\left(\frac{x\sqrt{-\ln \left(x\right)}}{\sin ^2\left(x\right)}\right)
+    = \frac{0}{0} \text{ (bertemu dengan indeterminate form)} \\
+  & = 2\cdot \lim _{x\to \:0^+}\left(\frac{\frac{d}{dx} \left(x\sqrt{-\ln \left(x\right)}\right)}{\frac{d}{dx} (\sin ^2\left(x\right))}\right) \\
+  & =2\cdot \lim _{x\to \:0^+}\left(\frac{\sqrt{-\ln \left(x\right)}-\frac{1}{2\sqrt{-\ln \left(x\right)}}}{2 \sin(x) \cos(x)}\right) \\
+  & =2\cdot \lim _{x\to \:0^+}\left(\frac{\sqrt{-\ln \left(x\right)}-\frac{1}{2\sqrt{-\ln \left(x\right)}}}{\sin \left(2x\right)}\right) \\
+  & =2\cdot \lim _{x\to \:0^+}\left(\frac{-2\ln \left(x\right)-1}{2\sin \left(2x\right)\sqrt{-\ln \left(x\right)}}\right) \\
+  & = 2\cdot \frac{1}{2}\cdot \lim _{x\to \:0^+}\left(\frac{-2\ln \left(x\right)-1}{\sin \left(2x\right)\sqrt{-\ln \left(x\right)}}\right) \\
+  & = 2\cdot \frac{1}{2}\cdot \frac{\infty \:}{\text{tidak terdefinisi}} = \infty \text{ (limit divergen/tidak ada)}
   \\ & \textbf{by Ammar Faizi}
 \end{aligned}
 }
